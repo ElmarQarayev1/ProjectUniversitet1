@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Core
 {
-	public class Patient:Human
+	public class Patient:Human//inheritance prinsipi
 	{		
 		public List<Appointment> Appointments { get; set; }
 
