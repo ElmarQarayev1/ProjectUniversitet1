@@ -7,6 +7,7 @@ using Service.Exceptions;
 namespace Service
 {
     public class PatientService : IPatient//patient interfacesinden metodlar gelir
+
     {
         AppDbContext _context;
 
@@ -45,6 +46,7 @@ namespace Service
 
             existEntity.FullName = entity.FullName;
             existEntity.Email = entity.Email;
+            existEntity.Password = entity.Password;
             _context.SaveChanges();
         }
     }

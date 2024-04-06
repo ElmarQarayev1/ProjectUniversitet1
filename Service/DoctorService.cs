@@ -46,6 +46,7 @@ namespace Service
 
             existEntity.FullName = entity.FullName;
             existEntity.Email = entity.Email;
+            existEntity.Password = entity.Password;
 
             _context.SaveChanges();
         }

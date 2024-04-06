@@ -9,10 +9,9 @@ namespace Core
 
 		public int PatientId { get; set; }
 
-		public Doctor Doctor { get; set; }
+		public Doctor? Doctor { get; set; }
 
-		public Patient Patient { get; set; }
+		public Patient? Patient { get; set; }
 
 	}
 }
-

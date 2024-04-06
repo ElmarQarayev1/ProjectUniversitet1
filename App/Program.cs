@@ -101,6 +101,16 @@ Email:
 
         goto Email;
     }
+    password:
+    Console.Write("\nEnter Password: ");
+    string? password = Console.ReadLine();
+    if (password.Length<3)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nplease enter a valid password..");
+        Console.ForegroundColor = ConsoleColor.White;
+        goto password;
+    }
     var doctor = appDbContext.Doctors.FirstOrDefault(x => x.Email == email);
     if (doctor != null)
     {
@@ -131,6 +141,16 @@ Email:
         Console.ForegroundColor = ConsoleColor.White;
 
         goto Email;
+    }
+password:
+    Console.Write("\nEnter Password: ");
+    string? password = Console.ReadLine();
+    if (password.Length < 3)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nplease enter a valid password..");
+        Console.ForegroundColor = ConsoleColor.White;
+        goto password;
     }
     var patient = appDbContext.Patients.FirstOrDefault(x => x.Email == email);
     if (patient != null)
@@ -365,10 +385,21 @@ Email:
         Console.ForegroundColor = ConsoleColor.White;
         goto Email;
     }
+password:
+    Console.Write("\nEnter Password: ");
+    string? password = Console.ReadLine();
+    if (password.Length < 3)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nplease enter a valid password..");
+        Console.ForegroundColor = ConsoleColor.White;
+        goto password;
+    }
     var doctor = new Doctor()
     {
         FullName = fullname.ChangeToCaptalize(),
-        Email = email
+        Email = email,
+        Password=password
     };
     return doctor;
 }
@@ -419,10 +450,21 @@ Email:
         Console.ForegroundColor = ConsoleColor.White;
         goto Email;
     }
+password:
+    Console.Write("\nEnter Password: ");
+    string? password = Console.ReadLine();
+    if (password.Length < 3)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nplease enter a valid password..");
+        Console.ForegroundColor = ConsoleColor.White;
+        goto password;
+    }
     var patient = new Patient()
     {
         FullName = fullname.ChangeToCaptalize(),
-        Email = email
+        Email = email,
+        Password=password
     };
     return patient;
 }
